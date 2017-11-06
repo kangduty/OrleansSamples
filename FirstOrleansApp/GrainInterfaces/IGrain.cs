@@ -5,6 +5,6 @@ namespace GrainInterfaces
 {
     public interface IGrain : IGrainWithIntegerKey
     {
-        Task<string> SayHello();
+        Task<string> SayHello(string greeting);
     }
 }

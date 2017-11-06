@@ -21,8 +21,10 @@ namespace Client
 
             //测试代码
             var friend = client.GetGrain<GrainInterfaces.IGrain>(0);
-            var rst = friend.SayHello().Result;
-            Console.WriteLine("\n\n{0}\n\n",rst);
+            Console.WriteLine("\n\n{0}\n\n", friend.SayHello("First").Result);
+            Console.WriteLine("\n\n{0}\n\n", friend.SayHello("Second").Result);
+            Console.WriteLine("\n\n{0}\n\n", friend.SayHello("Third").Result);
+            Console.WriteLine("\n\n{0}\n\n", friend.SayHello("Fourth").Result);
 
             Console.WriteLine("\nPress Enter to terminate...");
             Console.ReadKey();

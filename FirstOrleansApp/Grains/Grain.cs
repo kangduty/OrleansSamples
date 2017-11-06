@@ -5,9 +5,12 @@ namespace Grains
 {
     public class Grain : Orleans.Grain, IGrain
     {
-        public Task<string> SayHello()
+        private string text = "Hello World!";
+        public Task<string> SayHello(string greeting)
         {
-            return Task.FromResult("Hello world!");
+            var oldText = text;
+            text = greeting;
+            return Task.FromResult(oldText);
         }
     }
 }
